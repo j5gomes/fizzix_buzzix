@@ -39,6 +39,16 @@ defmodule FizzixBuzzix do
     # end
   end
 
-  def evaluate_number(rem(number, 3) == 0), do: :fizzix
-  def evaluate_number(rem(number, 3) == 0), do: :buzzix
+  # rem(number, 3) == 0 and rem(number, 5) == 0 needs to be here
+  def evaluate_number(number) when rem(number, 3) == 0 and rem(number, 5) == 0, do: :fizzixbuzzix
+  def evaluate_number(number) when rem(number, 3) == 0, do: :fizzix
+  def evaluate_number(number) when rem(number, 5) == 0, do: :buzzix
+
+  # rem(number, 3) == 0 and rem(number, 5) == 0 is not going to work here becuase the pattern matching is sequential
+  # def evaluate_number(number) when rem(number, 3) == 0 and rem(number, 5) == 0, do: :fizzixbuzzix
+
+  # We need this function for the cases that the number is not multiple of 3 or 5
+  def evaluate_number(number), do: number
+
+  # def evaluate_number(number) when rem(number, 3) == 0 and rem(number, 5) == 0, do: :fizzix_buzzix
 end
