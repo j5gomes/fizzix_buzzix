@@ -1,6 +1,6 @@
 # FizzixBuzzix
 
-**TODO: An Fizz Buzz implementation to learn the Elixir language
+An Fizz Buzz implementation to learn the Elixir language
 
 ## Installation
 
